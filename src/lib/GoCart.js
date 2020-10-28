@@ -147,16 +147,18 @@ class GoCart {
             });
         }
 
-        this.cartModalFailClose.addEventListener('click', () => {
-            this.closeFailModal();
-            this.closeCartModal();
-            if (this.isDrawerMode) {
-                this.closeCartDrawer();
-            } else {
-                this.closeMiniCart();
-            }
-            this.closeCartOverlay();
-        });
+        if (null !== this.cartModalFailClose) {
+            this.cartModalFailClose.addEventListener('click', () => {
+                this.closeFailModal();
+                this.closeCartModal();
+                if (this.isDrawerMode) {
+                    this.closeCartDrawer();
+                } else {
+                    this.closeMiniCart();
+                }
+                this.closeCartOverlay();
+            });
+        }
 
     }
 
